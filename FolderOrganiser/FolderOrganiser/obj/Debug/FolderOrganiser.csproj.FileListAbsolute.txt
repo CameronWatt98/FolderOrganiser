@@ -1,0 +1,13 @@
+C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\bin\Debug\FolderOrganiser.exe.config
+C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\bin\Debug\FolderOrganiser.exe
+C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\bin\Debug\FolderOrganiser.pdb
+C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\obj\Debug\FolderOrganiser.csprojAssemblyReference.cache
+C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\obj\Debug\FolderOrganiser.FolderOrganiserForm.resources
+C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\obj\Debug\FolderOrganiser.Properties.Resources.resources
+C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\obj\Debug\FolderOrganiser.csproj.GenerateResource.cache
+C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\obj\Debug\FolderOrganiser.csproj.CoreCompileInputs.cache
+C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\obj\Debug\FolderOrganiser.exe
+C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\obj\Debug\FolderOrganiser.pdb
+C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\obj\Debug\FolderOrganiser.InvalidPath.resources
+C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\obj\Debug\FolderOrganiser.NoFiles.resources
+C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\obj\Debug\FolderOrganiser.NoRadioButtonSelected.resources
