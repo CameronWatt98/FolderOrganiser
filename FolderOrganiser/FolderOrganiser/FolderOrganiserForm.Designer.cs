@@ -44,6 +44,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -203,11 +204,23 @@
             this.radioButton3.Text = "Remove Empty Folders";
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            this.button2.AccessibleDescription = "";
+            this.button2.Location = new System.Drawing.Point(361, 104);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(62, 20);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "Search ";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // FolderOrganiserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(465, 255);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.progressBar2);
@@ -247,6 +260,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ProgressBar progressBar2;
         private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.Button button2;
     }
 }
 

@@ -27,18 +27,18 @@ namespace FolderOrganiser
                 //initialise variable
                 progressBar1.Value = 0;
                 progressBar2.Value = 0;
-                var path = textBox1.Text;
+                var rootPath = textBox1.Text;
                 DateTime startTime = new DateTime();
                 DateTime endTime = new DateTime();
-                String[] months = { "1-January", "2-February", "3-March", "4-April", "5-May", "6-June", "7-July", "8-August", "9-September", "10-October", "11-November", "12-December" };
-                int[] monthlength = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+                String[] monthNames = { "1-January", "2-February", "3-March", "4-April", "5-May", "6-June", "7-July", "8-August", "9-September", "10-October", "11-November", "12-December" };
+                int[] monthLengths = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
                 //Add files to an array and sort them
-                DirectoryInfo di = new DirectoryInfo(path);
-                FileInfo[] fiArray = di.GetFiles();
+                DirectoryInfo dir = new DirectoryInfo(rootPath);
+                FileInfo[] fileArray = dir.GetFiles();
 
                 //this makes sure there are files and also prevents the user from spamming the button.
-                if (fiArray.Length == 0)
+                if (fileArray.Length == 0)
                 {
                     NoFiles NFform = new NoFiles();
                     NFform.StartPosition = FormStartPosition.CenterParent;
@@ -46,33 +46,33 @@ namespace FolderOrganiser
                 }
                 else
                 {
-                    Array.Sort(fiArray, (x, y) => StringComparer.OrdinalIgnoreCase.Compare(x.CreationTime, y.CreationTime));
-                    progressBar1.Maximum = fiArray.Length;
+                    Array.Sort(fileArray, (x, y) => StringComparer.OrdinalIgnoreCase.Compare(x.CreationTime, y.CreationTime));
+                    progressBar1.Maximum = fileArray.Length;
                     //set time for last and first created file in directory
-                    endTime = File.GetCreationTime(path + "\\" + fiArray[fiArray.Length - 1].Name);
-                    startTime = File.GetCreationTime(path + "\\" + fiArray[0].Name);
+                    endTime = File.GetCreationTime(rootPath + "\\" + fileArray[fileArray.Length - 1].Name);
+                    startTime = File.GetCreationTime(rootPath + "\\" + fileArray[0].Name);
 
 
                     //if you want subfolders split by YEARS
                     if (radioButton1.Checked)
                     {
-                        createSubFolders("years", path, startTime, endTime, months, monthlength, true);
-                        moveFiles("years", path, fiArray, months);
+                        createSubFolders("years", rootPath, startTime, endTime, monthNames, monthLengths, true);
+                        moveFiles("years", rootPath, fileArray, monthNames);
                     }
                     //if you want subfolders split by MONTHS
                     else if (radioButton2.Checked)
                     {
-                        createSubFolders("years", path, startTime, endTime, months, monthlength, false);
-                        createSubFolders("months", path, startTime, endTime, months, monthlength, true);
-                        moveFiles("months", path, fiArray, months);
+                        createSubFolders("years", rootPath, startTime, endTime, monthNames, monthLengths, false);
+                        createSubFolders("months", rootPath, startTime, endTime, monthNames, monthLengths, true);
+                        moveFiles("months", rootPath, fileArray, monthNames);
                     }
                     //if you want subfolders split by DAYS
                     else if (radioButton4.Checked)
                     {
-                        createSubFolders("years", path, startTime, endTime, months, monthlength, false);
-                        createSubFolders("months", path, startTime, endTime, months, monthlength, false);
-                        createSubFolders("days", path, startTime, endTime, months, monthlength, true);
-                        moveFiles("days", path, fiArray, months);
+                        createSubFolders("years", rootPath, startTime, endTime, monthNames, monthLengths, false);
+                        createSubFolders("months", rootPath, startTime, endTime, monthNames, monthLengths, false);
+                        createSubFolders("days", rootPath, startTime, endTime, monthNames, monthLengths, true);
+                        moveFiles("days", rootPath, fileArray, monthNames);
                     }
                     else
                     {
@@ -80,11 +80,11 @@ namespace FolderOrganiser
                         NRBSform.StartPosition = FormStartPosition.CenterParent;
                         NRBSform.ShowDialog(this);
                     }
-
+                    
                     //if you want just subfolders with data within them
                     if (radioButton3.Checked)
                     {
-                        removeEmptyFolders(path);
+                        removeEmptyFolders(rootPath);
                     }
                 }
 
@@ -101,24 +101,24 @@ namespace FolderOrganiser
 
 
         /*-------CREATES SUBFOLDERS BASED ON THE SPECIFICATION IN VARIABLE "TIME"--------*/
-        private void createSubFolders(String time, String path, DateTime startTime, DateTime endTime, String[] months, int[] monthLength, bool updateProgressBar)
+        private void createSubFolders(String time, String rootPath, DateTime startTime, DateTime endTime, String[] months, int[] monthLength, bool updateProgressBar)
         {
             //if all files were created on the same day
             if (startTime.Date == endTime.Date)
             {
                 if (time == "years")
                 {
-                    Directory.CreateDirectory(path + "\\" + startTime.Year.ToString());
+                    Directory.CreateDirectory(rootPath + "\\" + startTime.Year.ToString());
                     progressBar2.Value = progressBar2.Maximum;
                 }
                 else if (time == "months")
                 {
-                    Directory.CreateDirectory(path + "\\" + startTime.Year.ToString() + "\\" + months[startTime.Month - 1]);
+                    Directory.CreateDirectory(rootPath + "\\" + startTime.Year.ToString() + "\\" + months[startTime.Month - 1]);
                     progressBar2.Value = progressBar2.Maximum;
                 }
                 else if (time == "days")
                 {
-                    Directory.CreateDirectory(path + "\\" + startTime.Year.ToString() + "\\" + months[startTime.Month - 1] + "\\" + startTime.Day + "-" + startTime.DayOfWeek);
+                    Directory.CreateDirectory(rootPath + "\\" + startTime.Year.ToString() + "\\" + months[startTime.Month - 1] + "\\" + startTime.Day + "-" + startTime.DayOfWeek);
                     progressBar2.Value = progressBar2.Maximum;
                 }
             }
@@ -135,7 +135,7 @@ namespace FolderOrganiser
                     while (currentTime.Year <= endTime.Year)
                     {
                         //create folder
-                        Directory.CreateDirectory(path + "\\" + currentTime.Year.ToString());
+                        Directory.CreateDirectory(rootPath + "\\" + currentTime.Year.ToString());
                         currentTime = currentTime.AddYears(1);
 
                         //update progress bar
@@ -157,7 +157,7 @@ namespace FolderOrganiser
                     while ((currentTime.Month <= endTime.Month || currentTime.Year < endTime.Year))
                     {
                         //create folder
-                        Directory.CreateDirectory(path + "\\" + currentTime.Year.ToString() + "\\" + months[currentTime.Month - 1]);
+                        Directory.CreateDirectory(rootPath + "\\" + currentTime.Year.ToString() + "\\" + months[currentTime.Month - 1]);
                         currentTime = currentTime.AddMonths(1);
 
                         //update progress bar
@@ -179,7 +179,7 @@ namespace FolderOrganiser
                     while (currentTime.Day <= endTime.Day || currentTime.Month < endTime.Month || currentTime.Year < endTime.Year)
                     {
                         //create folder
-                        Directory.CreateDirectory(path + "\\" + currentTime.Year.ToString() + "\\" + months[currentTime.Month - 1] + "\\" + currentTime.Day + "-" + currentTime.DayOfWeek);
+                        Directory.CreateDirectory(rootPath + "\\" + currentTime.Year.ToString() + "\\" + months[currentTime.Month - 1] + "\\" + currentTime.Day + "-" + currentTime.DayOfWeek);
                         currentTime = currentTime.AddDays(1);
 
                         //update progress bar
@@ -200,38 +200,45 @@ namespace FolderOrganiser
         }
 
         /*---------MOVES FILES INTO THE APPROPRIATE SUBFOLDERS---------*/
-        private void moveFiles(String time, String path, FileInfo[] fiArray, String[] months)
+        private void moveFiles(String time, String rootPath, FileInfo[] fiArray, String[] months)
         {
             //add the files in the root folder to their correct subfolder
             DateTime creationTime = new DateTime();
             foreach (FileInfo fi in fiArray)
             {
-                creationTime = File.GetCreationTime(path + "\\" + fi.Name);
+                creationTime = File.GetCreationTime(rootPath + "\\" + fi.Name);
                 if (time == "years")
                 {
-                    var targetPath = path + "\\" + creationTime.Year + "\\" + fi.Name;
-                    File.Move(path + "\\" + fi.Name, targetPath);
-                    File.SetCreationTime(targetPath, creationTime);
+                    var targetFile = rootPath + "\\" + creationTime.Year + "\\" + fi.Name;
+                    var rootFile = rootPath + "\\" + fi.Name;
+
+                    File.Move(rootFile, targetFile);
+                    File.SetCreationTime(targetFile, creationTime);
                     progressBar1.Value = progressBar1.Value + 1;
                 }
                 else if(time=="months")
                 {
-                    var targetPath = path + "\\" + creationTime.Year + "\\" + months[creationTime.Month - 1] + "\\" + fi.Name;
-                    File.Move(path + "\\" + fi.Name, targetPath);
-                    File.SetCreationTime(targetPath, creationTime);
+                    var targetFile = rootPath + "\\" + creationTime.Year + "\\" + months[creationTime.Month - 1] + "\\" + fi.Name;
+                    var rootFile = rootPath + "\\" + fi.Name;
+
+                    File.Move(rootFile, targetFile);
+                    File.SetCreationTime(targetFile, creationTime);
                     progressBar1.Value = progressBar1.Value + 1;
                 }
                 else if(time=="days")
                 {
-                    var targetPath = path + "\\" + creationTime.Year + "\\" + months[creationTime.Month - 1] + 
+                    var targetFile = rootPath + "\\" + creationTime.Year + "\\" + months[creationTime.Month - 1] +
                                      "\\" + creationTime.Day + "-" + creationTime.DayOfWeek + "\\" + fi.Name;
-                    File.Move(path + "\\" + fi.Name, targetPath);
-                    File.SetCreationTime(targetPath, creationTime);
+                    var rootFile = rootPath + "\\" + fi.Name;
+
+                    File.Move(rootFile, targetFile);
+                    File.SetCreationTime(targetFile, creationTime);
                     progressBar1.Value = progressBar1.Value + 1;
                 }
             }
         }
 
+        /*--------REMOVES ANY FOLDERS CREATED WHICH ARE EMPTY--------*/
         private static void removeEmptyFolders(string path)
         {
             foreach (var directory in Directory.GetDirectories(path))
@@ -245,5 +252,14 @@ namespace FolderOrganiser
             }
         }
 
+        /*-------SEARCH FOR FOLDERS MANUALLY--------*/
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            {
+                textBox1.Text = folderBrowserDialog1.SelectedPath;
+            }
+        }
     }
 }

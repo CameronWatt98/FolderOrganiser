@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.645
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FolderOrganiser", "FolderOrganiser\FolderOrganiser.csproj", "{30EF1AE5-042D-41FB-9C38-97BBC2D15F66}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "FolderOrganiser Installer", "FolderOrganiser Installer\FolderOrganiser Installer.vdproj", "{EF882BFF-4D30-4F44-8B14-51CF78682A19}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{30EF1AE5-042D-41FB-9C38-97BBC2D15F66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30EF1AE5-042D-41FB-9C38-97BBC2D15F66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30EF1AE5-042D-41FB-9C38-97BBC2D15F66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF882BFF-4D30-4F44-8B14-51CF78682A19}.Debug|Any CPU.ActiveCfg = Debug
+		{EF882BFF-4D30-4F44-8B14-51CF78682A19}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -11,3 +11,7 @@ C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\ob
 C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\obj\Debug\FolderOrganiser.InvalidPath.resources
 C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\obj\Debug\FolderOrganiser.NoFiles.resources
 C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\obj\Debug\FolderOrganiser.NoRadioButtonSelected.resources
+C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\bin\Debug\FolderOrganiser.exe.manifest
+C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\bin\Debug\FolderOrganiser.application
+C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\obj\Debug\FolderOrganiser.exe.manifest
+C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\obj\Debug\FolderOrganiser.application

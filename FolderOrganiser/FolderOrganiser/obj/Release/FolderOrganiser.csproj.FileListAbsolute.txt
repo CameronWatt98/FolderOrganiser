@@ -1,0 +1,17 @@
+C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\bin\Release\FolderOrganiser.exe.config
+C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\bin\Release\FolderOrganiser.exe
+C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\bin\Release\FolderOrganiser.pdb
+C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\obj\Release\FolderOrganiser.csprojAssemblyReference.cache
+C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\obj\Release\FolderOrganiser.FolderOrganiserForm.resources
+C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\obj\Release\FolderOrganiser.InvalidPath.resources
+C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\obj\Release\FolderOrganiser.NoFiles.resources
+C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\obj\Release\FolderOrganiser.NoRadioButtonSelected.resources
+C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\obj\Release\FolderOrganiser.Properties.Resources.resources
+C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\obj\Release\FolderOrganiser.csproj.GenerateResource.cache
+C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\obj\Release\FolderOrganiser.csproj.CoreCompileInputs.cache
+C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\obj\Release\FolderOrganiser.exe
+C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\obj\Release\FolderOrganiser.pdb
+C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\bin\Release\FolderOrganiser.exe.manifest
+C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\bin\Release\FolderOrganiser.application
+C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\obj\Release\FolderOrganiser.exe.manifest
+C:\Users\camwa_000\source\repos\OspreyWindows\FolderOrganiser\FolderOrganiser\obj\Release\FolderOrganiser.application
